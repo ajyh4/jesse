@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>for Mme A</title>
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #F08080; /* Light coral color */
-    color: white; /* Adjust text color if needed */
-    flex-direction: column;
-  }
-  #message, #error {
-    margin-top: 20px;
-  }
-</style>
-<script language="javascript">
-function afficheMessage() {
-    const name = document.getElementById('texte1').value;
-    if (name === "Acquah Odelia") {
-        const message = 'Hey ' + name + ', I want you in my bed not to kiss but to cuddle you!!!!';
-        document.getElementById('message').innerText = message;
-        document.getElementById('error').innerText = ''; // Clear any previous error message
-    } else if (name === "heart") { // New condition
-        const message = 'Thank you for coming into my life. Don\'t listen to the others';
-        document.getElementById('message').innerText = message;
-        document.getElementById('error').innerText = ''; // Clear any previous error message
-    } else {
-        document.getElementById('message').innerText = ''; // Clear any previous success message
-        document.getElementById('error').innerText = 'Error: Please enter "it is not the name of my wife"';
+    <title>for Mme A</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #F08080; /* Light coral color */
+        color: white; /* Adjust text color if needed */
+        flex-direction: column;
+      }
+      #message, #error {
+        margin-top: 20px;
+      }
+    </style>
+    <script language="javascript">
+    function afficheMessage() {
+        const name = document.getElementById('texte1').value;
+        if (name === "Acquah Odelia") {
+            const message = 'Hey ' + name + ', I want you in my bed not to kiss but to cuddle you!!!!';
+            document.getElementById('message').innerText = message;
+            document.getElementById('error').innerText = ''; // Clear any previous error message
+        } else if (name.toLowerCase() === "heart") { // New condition to be case insensitive
+            const message = 'Thank you for coming into my life. Don\'t listen to the others';
+            document.getElementById('message').innerText = message;
+            document.getElementById('error').innerText = ''; // Clear any previous error message
+        } else {
+            document.getElementById('message').innerText = ''; // Clear any previous success message
+            document.getElementById('error').innerText = 'Error: Please enter the correct name';
+        }
     }
-}
-</script>
+    </script>
 </head>
 <body>
-<div style="text-align:center">Write your name please: <input type="text" id="texte1"><br><br>
-<input type="button" value="Click" onClick="afficheMessage()"> </div>
-<div id="message"></div>
-<div id="error" style="color: red;"></div>
+    <div style="text-align:center">Write your name please: <input type="text" id="texte1"><br><br>
+    <input type="button" value="Click" onClick="afficheMessage()"> </div>
+    <div id="message"></div>
+    <div id="error" style="color: red;"></div>
 </body>
 </html>
